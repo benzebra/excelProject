@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" 
+                rel="stylesheet" 
+                integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" 
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js"></script>
+        <title>Differenza Clienti</title>
+    </head>
+    <body id="body">
+        <div id="main-container">
+            <h1 id="title">
+                Differenza Clienti
+            </h1>
+            <div id="input">
+                <div id="first-file">
+                    <label for="formFileLgFirst" class="form-label display-6">File vecchio</label>
+                    <input class="form-control form-control-lg" id="formFileLgFirst" type="file" required>
+                    <!-- accept=".xlsx, .xls" -->
+                </div>
+                <div id="second-file">
+                    <label for="formFileLgSecond" class="form-label display-6">File nuovo</label>
+                    <input class="form-control form-control-lg" id="formFileLgSecond" type="file" required>
+                </div>
+            </div>
+            <button type="button" class="btn btn-warning" id="confirm">Vedi Clienti</button>
+            <div id="spinning"></div>
+        </div>
+        <div id="results">
+            <div id="rimossi">
+                <h2>CLIENTI RIMOSSI</h2>
+                <table class="table table-danger table-bordered border-dark" id="table-rimossi">
+                    <thead>
+                        <th class="text-bg-dark">CF / P.iva</th>
+                        <th class="text-bg-dark">NOME</th>
+                    </thead>
+                    <tbody id="table-rimossi-body"> </tbody>     
+                </table>
+            </div>
+            <div id="aggiunti">
+                <h2>CLIENTI AGGIUNTI</h2>
+                <table class="table table-success table-bordered border-dark" id="table-aggiunti">
+                    <thead>
+                        <th class="text-bg-dark">CF / P.iva</th>
+                        <th class="text-bg-dark">NOME</th>
+                    </thead> 
+                    <tbody id="table-aggiunti-body"> </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
